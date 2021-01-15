@@ -1,14 +1,10 @@
+//showing the infinity number
+
 function showvalue(){
 
-    var dayofmonth = 50;
-    if (dayofmonth < 1 || dayofmonth > 31.) {
-
-      dayofmonth = Number.NaN
-      alert("day of month must be between 1 and 31.")
-
-
-    } 
-    
-    document.write("value of dayofmonth : " + dayofmonth );
-
-  }
+    var smallNumber = (-Number.MAX_VALUE) * 2
+    if (smallNumber == Number.NEGATIVE_INFINITY){
+        alert("value of smallNumber :" + smallNumber );
+        
+    }
+}
