@@ -1,29 +1,23 @@
-//showing the infinity number
-/*
-function showvalue(){
 
-    var smallNumber = (-Number.MAX_VALUE) * 2
-    if (smallNumber == Number.NEGATIVE_INFINITY){
-        alert("value of smallNumber :" + smallNumber );
+//the charAt()string method
+var str = ( "this is a string" )
 
-    }
-}
-*/
-
-//a prototype is a global property allows to add properties to method to any object
-
-function book(title, author){
-    this.title = title;
-    this.author = author;
-
-}
-
-var mybook = new book("perl", "mohtasim");
-book.prototype.price = null;
-mybook.price = 100;
-
-document.write("book title is : " + mybook.title + "<br>");
-document.write("book author is :" + mybook.author + "<br>");
-document.write("book price is : " + mybook.price + "<br>");
+document.writeln("str.charAt(0) is :" + str.charAt(0));
+document.writeln("<br />str.charAt(1) is :" + str.charAt(1));
+document.writeln("<br />str.charAt(2) is " +str.charAt(2));
 
 
+//the charcodeAt() string method
+var str = ("this is a string")
+document.write("<br />str.charCodeAt(0) is" + str.charCodeAt(0));
+document.write("<br />str.charCodeAt(2) is " + str.charCodeAt(2));
+
+//the string method contact()
+
+var str1 = ("this is string one");
+
+var str2 = ("this is string two");
+
+var str3 = str1.concat( str2);
+
+document.write("concatenated the strings :" + str3)
