@@ -1,23 +1,22 @@
 
-//the charAt()string method
-var str = ( "this is a string" )
 
-document.writeln("str.charAt(0) is :" + str.charAt(0));
-document.writeln("<br />str.charAt(1) is :" + str.charAt(1));
-document.writeln("<br />str.charAt(2) is " +str.charAt(2));
+var str1 = ("this is a beautiful string");
+
+var index = str1.localeCompare("XYZ");
+document.write("localeCompare first :" + index);
+
+document.write("<br />");
+
+var index = str1.localeCompare( "AbCD ?" );
+document.write("localeCompare second:" + index);
+
+//match
+var str = "for more information,see chapter 3.4.5.1";
+
+var re = /(chapter \d+(\.\d)*)/i;
+var found = str.match( re );
+
+document.write(found);
 
 
-//the charcodeAt() string method
-var str = ("this is a string")
-document.write("<br />str.charCodeAt(0) is" + str.charCodeAt(0));
-document.write("<br />str.charCodeAt(2) is " + str.charCodeAt(2));
 
-//the string method contact()
-
-var str1 = ("this is string one");
-
-var str2 = ("this is string two");
-
-var str3 = str1.concat( str2);
-
-document.write("concatenated the strings :" + str3)
