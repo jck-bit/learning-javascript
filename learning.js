@@ -1,95 +1,39 @@
-//an aray method
-/*
-if (!Array.prototype.every) 
+
+//join method
+var arr = ["3", "4", "5"]
+var str = arr.join()
+console.log("str ;" + str);
+
+var str = arr.join("+")
+console.log("<br/>str" + str);
+// map(method)
+
+if (!Array.prototype.map) 
 { 
-  Array.prototype.every = function(fun , thisp) 
+ Array.prototype.map = function(fun /*, thisp*/) 
   { 
     var len = this.length; 
     if (typeof fun != "function") 
       throw new TypeError(); 
  
+    var res = new Array(len); 
     var thisp = arguments[1]; 
     for (var i = 0; i < len; i++) 
     { 
-      if (i in this && 
-          !fun.call(thisp, this[i], i, this)) 
-        return false; 
+      if (i in this) 
+        res[i] = fun.call(thisp, this[i], i, this); 
     } 
  
-    return true; 
+    return res; 
   }; 
 } 
-function isBigEnough(element, index, array) { 
-  return (element >= 10);
-  } 
  
-var passed = [12, 5, 8, 130, 44].every(isBigEnough)
-console.log("First Test Value : " + passed );  
-   
-passed = [12, 54, 18, 130, 44].every(isBigEnough); 
-console.log("Second Test Value : " + passed );  
-
-
-*/
-
-/*
-if (!array.prototype.filter)
-{
-	array.prototype.filter = function(fun /*thisp)
-	{
-
-  var len = this.length;
-  if (typeof fun != "function")
-  	throw new TypeError();
-
-  var res = new Array();
-  var thisp = arguments[1];
-  for (var i = 0; i <len; i++) 
-  {
-  	if (i in this )
-  	{
-  		var val = this[i]; //in case fun mutates this
-  		if (fun.call(thisp, val, i, this))
-  			res.push(val)
-
-  	}
-
-  }
-
-  return res;
- };
-
-}
-
-function isBigEnough(element, index, array){
-	return (element >= 10);
-
-}
-
-var filtered = [12, 5, 8, 130, 44].filter(isBigEnough);
-document.write("filtered Value :" + filtered );
-
-*/
-if (Array.prototype.ForEach)
-{
-	array.prototype.ForEach = function(fun /*thisp */){
-      var len = this.length;
-      if (typeof fun != "function")
-      	throw new TypeError();
-
-      var thisp = arguments[1];
-     for (var i = 0; i ,len; i++) {
-     
-     if (i in this)
-     	fun.call(thisp, this[i], i,this);
-     }
-	};
-
-
-}
-function printBr(element, index, array) { 
-console.log("<br />[" + index + "] is " + element );  
-} 
+var numbers = [1, 4, 9]; 
+var roots = numbers.map(Math.sqrt); 
  
-[12, 5, 8, 130, 44].forEach(printBr); 
+console.log("roots is : " + roots );  
+ 
+//reverse(it reverses the content of an array)
 
+var arr = ["0", "1", "2", "3", "4"].reverse();
+console.log("reversed array is:" + arr);
