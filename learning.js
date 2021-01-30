@@ -24,3 +24,13 @@ console.log(  str);
 
  var dt = Date();
  console.log(dt);
+
+ //get date()...you only get the date
+
+ var dt = new Date("Fri Jan 29 2021 10:15:24");
+ console.log(dt.getDate());
+
+ //get day() you only get the day
+
+ var dt = new Date("Fri Jan 29 2021 10:15:24");
+ console.log(dt.getDay());
