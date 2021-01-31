@@ -1,36 +1,54 @@
-//the shift (method) it removes the first element of an array and returns it
-var element = [105, 1, 2,3].shift();
-console.log("Removed element is:" + element);
+/*
+var x = prompt ('where do you pple live');
+if ( x== 'vatican'){
+	alert('correct');
 
-//slice(method) extract a section of an array and returns a  new array
+}
 
-var arr = ["orange", "mango", "banana", "sugar", "tea"];
-console.log("arr.slice(1,2): " + arr.slice(1, 2));
-console.log("<br />" + arr.slice(1, 3))
+/*
+if (x !=='vatican'){
+	alert ('wrong answer');
+}
 
-// the sort method
-var arr = ["orange", "mango", "apple", "sugar"];
 
-var sorted = arr.sort();
-console.log(sorted);
+//its also the same as the below statement
 
-//to string(method)
-var arr = new Array("orange", "mango", "banana", "sugar"); 
- 
-var str = arr.toString(); 
-console.log(  str);
+else{
+	alert('wrong answer');
+}
 
-//Date (method)it returns todays date, time (no object is called)
+var x = prompt('where does the pope live');
+if (x === vatican){
+	alert(correct);
 
- var dt = Date();
- console.log(dt);
+}
+/*
+else{
+	alert(wrong);
+}
+//this is also the same as
 
- //get date()...you only get the date
+if (x !==vatican){
+	alert ('wrong answer');
+}
 
- var dt = new Date("Fri Jan 29 2021 10:15:24");
- console.log(dt.getDate());
+*/
 
- //get day() you only get the day
+ var weight = prompt('what is your weight');
+ var time = prompt('input your time you can run');
+if (weight > 300 && time <6){
+	alert('come to our tryout');
+}
 
- var dt = new Date("Fri Jan 29 2021 10:15:24");
- console.log(dt.getDay());
+else{
+	alert('come to our cookout');
+}
+
+
+
+
+
+
+
+
+
