@@ -1,6 +1,6 @@
 //the shift (method) it removes the first element of an array and returns it
 var element = [105, 1, 2,3].shift();
-console.log("removed element is:" + element);
+console.log("Removed element is:" + element);
 
 //slice(method) extract a section of an array and returns a  new array
 
