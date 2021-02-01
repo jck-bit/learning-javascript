@@ -49,8 +49,9 @@ function questions(){
 
   
 
-console.log(questions());
+console.log(questions()); 
 */
+/*
 function patients(){
 	var  cough = prompt('do you cough at night?');
 	var temperature = prompt('what is your body temperature?');
@@ -63,5 +64,36 @@ function patients(){
 
 
 console.log(patients());
+*/
 
+/*
 
+ var cleanestcities = ["bangok", "new york", "hungary", "geneva"];
+ var cityTocheck = prompt('select between   1 and 4');
+
+if (cityTocheck === cleanestcities[0]){
+	alert('its one of the cleanest cities');
+
+}
+
+if (cityTocheck === cleanestcities[1]){
+	alert('its one of the cleanest cities');
+}
+
+if (cityTocheck === cleanestcities[2]){
+	alert('its one of the cleanest cities');
+}
+
+if (cityTocheck === cleanestcities[3]){
+	alert('its one of the cleanest cities');
+}
+*/
+
+//the above can also be written as
+ var cleanestcities = ["bangok", "new york", "hungary", "geneva"];
+ var cityTocheck = prompt('select between   1 and 4');
+for (var i = 0; i < 4; i++){
+	if (cityTocheck === cleanestcities[i]){
+		alert('its one of the cleanest cities');
+	}
+}
