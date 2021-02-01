@@ -33,22 +33,21 @@ if (x !==vatican){
 }
 
 */
+function questions(){
+   var weight = prompt('what is your weight');
+   var time = prompt('what is your time');
+   var age = prompt('what is your age');
+   var gender =prompt('what is your gender')
 
- var weight = prompt('what is your weight');
- var time = prompt('input your time you can run');
-if (weight > 300 && time <6){
-	alert('come to our tryout');
+ if (weight >300 && time < 6 && age >17 && gender === "male");{
+ 	alert('come to your tryout');
+
+ }
+
 }
+  
 
-else{
-	alert('come to our cookout');
-}
-
-
-
-
-
-
+console.log(questions());
 
 
 
