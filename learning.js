@@ -33,6 +33,7 @@ if (x !==vatican){
 }
 
 */
+/*
 function questions(){
    var weight = prompt('what is your weight');
    var time = prompt('what is your time');
@@ -45,9 +46,22 @@ function questions(){
  }
 
 }
+
   
 
 console.log(questions());
+*/
+function patients(){
+	var  cough = prompt('do you cough at night?');
+	var temperature = prompt('what is your body temperature?');
+    var shake  = prompt('do you shake at night');
 
+    if (cough == 'yes' && temperature > 37 && shake == 'yes');{
+    	alert('go see a doctore')
+    }
+}
+
+
+console.log(patients());
 
 
