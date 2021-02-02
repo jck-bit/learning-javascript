@@ -51,20 +51,40 @@ function questions(){
 
 console.log(questions()); 
 */
-/*
+
 function patients(){
 	var  cough = prompt('do you cough at night?');
 	var temperature = prompt('what is your body temperature?');
     var shake  = prompt('do you shake at night');
 
-    if (cough == 'yes' && temperature > 37 && shake == 'yes');{
-    	alert('go see a doctore')
-    }
-}
+      if (cough == 'yes'){
+      	alert('its cold at night');
+      }
+        else{
+        	alert('its not fine to stay in the cold at night');
+        }
+
+       if (temperature > 37){
+       	alert('you have fever..you should see a doctor');
+       } 
+       else{
+       	alert('you dont have fever');
+       }
+       if (shake == 'yes'){
+       	alert('go near warmth');
+       }
+       else{
+       	alert('you good to go');
+       }
+
+       if (temperature > 37 && shake == 'yes' && cough == 'yes'){
+       	alert('see a doctor now');
+       }
+}  
 
 
 console.log(patients());
-*/
+ 
 
 /*
 
