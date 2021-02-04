@@ -51,6 +51,7 @@ function questions(){
 
 console.log(questions()); 
 */
+/*
 
 function patients(){
 	var  cough = prompt('do you cough at night?');
@@ -85,7 +86,7 @@ function patients(){
 
 console.log(patients());
  
-
+*/
 /*
 
  var cleanestcities = ["bangok", "new york", "hungary", "geneva"];
@@ -110,10 +111,14 @@ if (cityTocheck === cleanestcities[3]){
 */
 
 //the above can also be written as
+ var cityTocheck = prompt('which is the cleanest city?');
  var cleanestcities = ["bangok", "new york", "hungary", "geneva"];
- var cityTocheck = prompt('select between   1 and 4');
+
 for (var i = 0; i < 4; i++){
 	if (cityTocheck === cleanestcities[i]){
 		alert('its one of the cleanest cities');
+	}
+	else{
+		alert('its not among the cleanest cities');
 	}
 }
