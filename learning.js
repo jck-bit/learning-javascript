@@ -111,6 +111,7 @@ if (cityTocheck === cleanestcities[3]){
 */
 
 //the above can also be written as
+/*
  var cityTocheck = prompt('which is the cleanest city?');
  var cleanestcities = ["bangok", "new york", "hungary", "geneva"];
 
@@ -122,3 +123,41 @@ for (var i = 0; i < 4; i++){
 		alert('its not among the cleanest cities');
 	}
 }
+*/
+//conditions
+/*
+var firstname = ['blueray', 'upchuck','lojack', 'gizmo', 'do-rag'];
+var lastname = ['zzz','burp','dogbone','droop'];
+var fullname = [];
+for (var i = 0; i < firstname.length; i++){
+	for(var j = 0; j < lastname.length; j++){
+		fullname.push(firstname[i] + lastname[j]);
+	}
+}
+console.log(fullname);
+ */
+ /*
+ var cityTocheck = prompt('which is the cleanest city');
+ cityTocheck = cityTocheck.toLowerCase();
+ var cleanestcities = ['nairobi', 'kigali', 'capetown' ,'new york'];
+ for (var i = 0; i < 4; i++){
+ 	
+   
+ 	else{
+ 	alert('oops!!its not among the cleanest cities');
+ 	}
+}
+*/
+
+
+
+
+
+//i want to slice an array
+var month = prompt('enter the name of the month');
+var charsinmonth = month.length
+if (charsinmonth > 3){
+	monthabrv = month.slice(0, 3);
+	alert(monthabrv);
+}
+console.log(monthabrv);
