@@ -123,6 +123,7 @@ function test50(x, y){
   console.log(i);
 }
 */
+/*
 
 function start_java(str){
 	if (str.lenght < 4){
@@ -142,7 +143,7 @@ function start_java(str){
 console.log(start_java('javascriptprogramme'));
 console.log(start_java('python'));
 console.log(start_java('java'));
-
+  
 
 function range(num){
 	if (num > 59.99) {
@@ -172,4 +173,53 @@ function greatest_number(x, y, z)
 	}
 	return max_val;
 }
-console.log(greatest_number(10,2,22))
+console.log(greatest_number(10,2,225))
+*/
+
+//creating a stack in javascript
+ 
+var stack = function() {
+	this.count = 0;
+	this.storage = {};
+
+
+//adds a value at the end of the end of a stuck
+
+this.push = function(value){
+	this.storage[this.count] = value;
+	this.count++;
+
+}
+
+//removes and returns a value at the end of the stack
+
+this.pop = function(){
+	if (this.count === 0){
+		return undefined;
+			}
+
+
+this.count--;
+var result = this.storage[this.count];
+delete this.storage[this.count];
+return result;
+
+}
+ this.size = function(){
+ 	return this.count;
+ }
+
+//returns the value at the end of the stack
+this.peek = function(){
+	return this.storage[this.count-1];
+}
+
+}
+
+var mystack = new stack();
+
+mystack.push(2);
+mystack.push(2);
+console.log(mystack.peek());
+console.log(mystack.pop()); 
+console.log(mystack.peek());
