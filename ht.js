@@ -103,7 +103,7 @@ function test50(x, y){
  console.log(diff(29));
  */
  /*
- function positive_negative(x, y){
+ function positive_negative(x, y){ 
  	if ((x > 0 && y > 0) ||x > 0 && y < 0  ){
  		return true;
  	}
@@ -123,7 +123,7 @@ function test50(x, y){
   console.log(i);
 }
 */
-/*
+
 
 function start_java(str){
 	if (str.lenght < 4){
@@ -154,7 +154,7 @@ function range(num){
 	}
 }
 
-console.log(range(60))
+console.log(range(58  ))
 
 // a programme to check the greatest number
 
@@ -174,7 +174,7 @@ function greatest_number(x, y, z)
 	return max_val;
 }
 console.log(greatest_number(10,2,225))
-*/
+
 
 //creating a stack in javascript
  
@@ -223,3 +223,37 @@ mystack.push(2);
 console.log(mystack.peek());
 console.log(mystack.pop()); 
 console.log(mystack.peek());
+
+//a queue in javascript
+
+function Queue (){
+	collection = [];
+	this.print = function(){
+		console.log(collection);
+	};
+	this.enqueue = function(element){
+		collection.push(element);
+	};
+	this.dequeue = function(){
+		return collection.shift();
+	};
+	this.front = function(){
+		return collection[0];
+	};
+	this.size = function(){
+		return collection.length;
+	};
+	this.empty = function(){
+		return(collection.length === 0);
+	};
+
+}
+
+var q = new Queue();
+q.enqueue('a');
+q.enqueue('b');
+q.enqueue('c');
+q.print();
+q.dequeue();
+console.log(q.front());
+q.print();
