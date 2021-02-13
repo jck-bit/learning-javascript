@@ -1,136 +1,68 @@
-
-//binary search tree
-class Node {
-	constructor(data, left = null, right = null){
-		this.data = data;
-        this.left = left;
-        this.right = right; 
+//hash tables
+var hash = (String, max) => {
+	var hash = 0;
+	for (var i = 0; i< String.length; i++){
+		hash += String.charCodeAt(i);
 	}
-}
+	return hash % max;
+};
 
-class BST {
-	constructor(){
-		this.root = null;
+let HashTable = function (){
+	let storage  = [];
+	const storagelimit = 4;
+
+	this.print  = function(){
+		console.log (storage)
 	}
-	add(data){
-		const node = this.root;
-		if (node === null){
-			this.root = new Node(data);
-			return;
+	this.add = function(key, value){
+		var index = hash(key,storagelimit);
+		if (storage[index] === undefined){
+			Storage[index] = [
+				[key, value]
+			];
+		}else{
+			var inserted = false;
+			for (var i = 0; i < storage[index][i][0] === key;) {
+				storage[index][i][1] = value;
+				inserted = true;
+			}
+
 		}
-		else {
-			const searchTree = function(node){
-				if (data < node.data){
-					if(node.left === null){
-						node.left = new Node(data);
-						return;
-					}
-					else if (node.left !== null) {
-						return searchTree(node.left);
-					}
-					else if (data > node.data) {
-						if (node.right === null) {
-							node.right = new Node(data);
-							return;
-						}
-						else if (node.right !== null) {
-							return searchTree(node.right);
-						}
+		if (inserted === false){
+			storage[index].push([key, value]);
+		}
+	}
+};
+this.remove = function(key){
+	var index = has(key,storagelimit);
+	if (Storage[index].length === 1 && storage[index][0][0] === key){
+		delete storage [index];
+	} else{
+		for ( var i = 0;i < Storage[index]; i++){
+			if (Storage [index][0] === key){
+				delete Storage[index][i];
+			}
+		}
+	}
+};
+this.lookup = function(key){
+	var index = hash(key,storagelimit);
+	if(storage[index] === undefined){
+		return undefined;
+	} else {
+		for (var i = 0; i < storage [index].length; i++){
+			if (storage [index][i][0] === key) {
+				return Storage [index][i][1];
+			}
+		}
+	}
+};
+console.log(hash('black', 10))
 
-						else {
-							return null;
-						}
-					};
-					return searchTree(node);
-				}
-
-			}
-			findmin()
-				let current = this.root;
-				while (current.left !==null){
-					current = current.left;
-				}
-				return current.data;
-			}
-			findmax()
-				let current = this.current;
-				while (current.right !== null)
-					current = current.right;
-				return current.data
-				}
-				
-			}
-			find (data)
-				let current = this.root;
-				while (current.data !== data){
-					if (data < current.data){
-						current = current.left;
-					}
-					else{
-						current = current.right;
-					}
-					if(current === null)
-						return null;
-					}
-					
-				
-				return current;
-			
-			ispresent(data) {
-				let current = this.root;
-				while (current){
-					if (data === current.data){
-						return true;
-					}
-					if (data < current.data){
-						current = current.left;
-					}	
-					else{
-						current = currrent.right;
-					}	
-				}
-				return false;
-			}
-		remove (data){
-			const removeNode = function(node, data){
-				if (node == null){
-					return null;
-				}
-
-				if(data == node.data){
-					//node has no children
-					if (node.left == null && node.right == null){
-						return null;
-					}
-					//node has no left child
-					if (node.left == null){
-						return node.right;
-					}
-					//node has no right child
-					if (node.right == null)
-						return node.left;
-				}
-			        //node has two children
-			        var tempNode = node.right;
-			        while (tempNode.left !== null){
-			        	tempNode =tempNode.left;
-			        }
-			        node.data = tempNode.data;
-			        node.right = removeNode(node.right, tempNode.data);
-			        return node;
-			}
-            
-              else if ( data <node.data) {
-              	node.left = removeNode(node.left,data);
-              	return node;
-              } 
-              else{
-              	node.right = removeNode(node.right, data);
-              	return node;
-              }
-			}
-			this.root = removeNode(this.root, data);
-	
-
-const bst = new BST();
-bst.add(4);
+let ht = new HashTable();
+ht.add('beau', 'person');
+ht.add('fido', 'dog');
+ht.add('rex', 'dinosaur');
+ht.add('tux', 'penguin');
+console.log(new HashTable('tux'))
+ht.print();
