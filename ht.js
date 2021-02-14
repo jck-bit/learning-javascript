@@ -1,68 +1,139 @@
-//hash tables
-var hash = (String, max) => {
-	var hash = 0;
-	for (var i = 0; i< String.length; i++){
-		hash += String.charCodeAt(i);
-	}
-	return hash % max;
-};
+//linked list
 
-let HashTable = function (){
-	let storage  = [];
-	const storagelimit = 4;
+class linkedlist {
+	constructor() {
+		var length = 0;
+		var head = null;
 
-	this.print  = function(){
-		console.log (storage)
-	}
-	this.add = function(key, value){
-		var index = hash(key,storagelimit);
-		if (storage[index] === undefined){
-			Storage[index] = [
-				[key, value]
-			];
-		}else{
-			var inserted = false;
-			for (var i = 0; i < storage[index][i][0] === key;) {
-				storage[index][i][1] = value;
-				inserted = true;
+		var Node = function (element) {
+			this.element = element;
+			this.next = null;
+		};
+
+		this.size = function () {
+			return length;
+		};
+
+		this.head = function () {
+			return head;
+		};
+
+		this.add = function (element) {
+			var node = new Node(element);
+			if (head === null) {
+				head = node;
+			} else {
+				var currentNode = head;
+
+				while (currentNode.next) {
+					currentNode = currentNode.next;
+				}
+
+				currentNode.next = node;
 			}
+			length++;
+		};
+	}
+};
 
+this.remove = function(element){
+	var currentNode = head;
+	var previousNode;
+	if(currentNode.element === element){
+		head = currentNode.next;
+	}else{
+		while(currentNode.element !== element){
+			previousNode = currentNode;
+			currentNode = currentNode.next;
 		}
-		if (inserted === false){
-			storage[index].push([key, value]);
-		}
-	}
-};
-this.remove = function(key){
-	var index = has(key,storagelimit);
-	if (Storage[index].length === 1 && storage[index][0][0] === key){
-		delete storage [index];
-	} else{
-		for ( var i = 0;i < Storage[index]; i++){
-			if (Storage [index][0] === key){
-				delete Storage[index][i];
-			}
-		}
-	}
-};
-this.lookup = function(key){
-	var index = hash(key,storagelimit);
-	if(storage[index] === undefined){
-		return undefined;
-	} else {
-		for (var i = 0; i < storage [index].length; i++){
-			if (storage [index][i][0] === key) {
-				return Storage [index][i][1];
-			}
-		}
-	}
-};
-console.log(hash('black', 10))
 
-let ht = new HashTable();
-ht.add('beau', 'person');
-ht.add('fido', 'dog');
-ht.add('rex', 'dinosaur');
-ht.add('tux', 'penguin');
-console.log(new HashTable('tux'))
-ht.print();
+		previousNode.next = currentNode.next;
+	}
+
+	length --;
+};
+
+this.isEmpty = function(){
+	return length === 0;
+};
+
+this.indexof = function(element){
+	var currentNode = head;
+	var index = -1;
+
+	while(currentNode){
+		index ++;
+		if (currentNode.element === element){
+			return index;
+		}
+		currentNode = currentNode.next
+    }
+
+	return -1;
+};
+
+this.elementAt = function(index){
+	var currentNode = head;
+	var count = 0;
+	while (count < index){
+		count ++;
+		currentNode = currentNode.next
+	}
+	return currentNode.element;
+};
+
+
+this.addAt = function(index, element){
+	var node = new Node(element);
+
+	var currentNode = head;
+	var previousNode;
+	var currentIndex  = 0;
+
+	if(index > length){
+		 return false;
+        }
+
+		if (index === 0){
+			node.next = currentNode;
+			head = node;
+		}else {
+			while(currentIndex < index){
+				currentIndex ++;
+				previousNode = currentNode;
+				currentNode = currentNode.next;
+			}
+			node.next = currentNode;
+			previousNode.next = node;
+		}
+		length++;
+}
+ 
+this.removeAt = function(index){
+	var currentNode = head;
+	var previousNode;
+	var currentIndex = 0;
+	if (index < 0 || index >= length){
+		return null
+	}
+	if(index === 0){
+		head = currentNode.next
+	}else{
+		while(currentIndex < index) {
+			currentIndex ++;
+			previousNode = currentNode;
+			currentNode = currentNode.next;
+		}
+		previousNode.next = currentNode.next
+	}
+	length --;
+	return currentNode.element;
+}
+
+var conga  = new linkedlist();
+conga.add('kitten');
+conga.add('puppy');
+conga.add('dog');
+conga.add('cat');
+conga.add('fish');
+console.log(conga.size());
