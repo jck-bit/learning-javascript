@@ -1,139 +1,43 @@
-//linked list
+ //the merge sort algorithm
 
-class linkedlist {
-	constructor() {
-		var length = 0;
-		var head = null;
+function merge(leftarr, rightarr) {
+	const output = [];
+	let leftindex = 0;
+	let rightindex = 0;
 
-		var Node = function (element) {
-			this.element = element;
-			this.next = null;
-		};
+    while(leftindex < leftarr.length && rightindex < rightarr.length){
+		const leftel = leftarr[leftindex];
+		const rightel = rightarr[rightindex];
 
-		this.size = function () {
-			return length;
-		};
-
-		this.head = function () {
-			return head;
-		};
-
-		this.add = function (element) {
-			var node = new Node(element);
-			if (head === null) {
-				head = node;
-			} else {
-				var currentNode = head;
-
-				while (currentNode.next) {
-					currentNode = currentNode.next;
-				}
-
-				currentNode.next = node;
-			}
-			length++;
-		};
-	}
-};
-
-this.remove = function(element){
-	var currentNode = head;
-	var previousNode;
-	if(currentNode.element === element){
-		head = currentNode.next;
-	}else{
-		while(currentNode.element !== element){
-			previousNode = currentNode;
-			currentNode = currentNode.next;
+		if (leftel < rightel){
+			output.push(leftel)
+			leftindex++;
+		} else {
+			output.push(rightel);
+			rightindex++;
 		}
-
-		previousNode.next = currentNode.next;
-	}
-
-	length --;
-};
-
-this.isEmpty = function(){
-	return length === 0;
-};
-
-this.indexof = function(element){
-	var currentNode = head;
-	var index = -1;
-
-	while(currentNode){
-		index ++;
-		if (currentNode.element === element){
-			return index;
-		}
-		currentNode = currentNode.next
-    }
-
-	return -1;
-};
-
-this.elementAt = function(index){
-	var currentNode = head;
-	var count = 0;
-	while (count < index){
-		count ++;
-		currentNode = currentNode.next
-	}
-	return currentNode.element;
+	
+	}	
+	return [...output, ...leftarr.slice(leftindex),...rightarr.slice(rightindex)];
 };
 
 
-this.addAt = function(index, element){
-	var node = new Node(element);
 
-	var currentNode = head;
-	var previousNode;
-	var currentIndex  = 0;
-
-	if(index > length){
-		 return false;
-        }
-
-		if (index === 0){
-			node.next = currentNode;
-			head = node;
-		}else {
-			while(currentIndex < index){
-				currentIndex ++;
-				previousNode = currentNode;
-				currentNode = currentNode.next;
-			}
-			node.next = currentNode;
-			previousNode.next = node;
-		}
-		length++;
-}
- 
-this.removeAt = function(index){
-	var currentNode = head;
-	var previousNode;
-	var currentIndex = 0;
-	if (index < 0 || index >= length){
-		return null
+//recursive
+function mergesort(Array) {
+	if (Array.length < 1) {
+		return Array;
 	}
-	if(index === 0){
-		head = currentNode.next
-	}else{
-		while(currentIndex < index) {
-			currentIndex ++;
-			previousNode = currentNode;
-			currentNode = currentNode.next;
-		}
-		previousNode.next = currentNode.next
-	}
-	length --;
-	return currentNode.element;
-}
 
-var conga  = new linkedlist();
-conga.add('kitten');
-conga.add('puppy');
-conga.add('dog');
-conga.add('cat');
-conga.add('fish');
-console.log(conga.size());
+	const middleindex = Math.floor(Array.length / 2);
+	const leftarr = Array.slice(0, middleindex);
+	const rightarr = Array.slice(middleindex);
+
+	return merge(
+		mergesort(leftarr),
+		mergesort(rightarr)
+	);
+	
+};
+
+console.log(mergesort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]));
