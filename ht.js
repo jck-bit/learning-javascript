@@ -1,20 +1,31 @@
 
+//quick sort method
 
-const mergesort = function (arrA, arrB){
-	let singlesorted = [];
-	while(arrA.length && arrB.length){
-		if (arrA[0] < arrB[0]) {
-			singlesorted.push(arrA[0]);
-			arrA.shift();
-		}else{
-			singlesorted.push(arrB[0]);
-			arrB.shift();
+function quicksort (array){
+	if (array.length == 1){
+		return array;
+	}
+
+	const pivot = array[array.length - 1];
+	const leftarr = [];
+	const rightarr = [];
+	for (let i = 0; 1 < array.length - 1; i++){
+		if (array[i] < pivot){
+			leftarr.push(array[i]);
+			
+		} else{
+			rightarr.push(array[i]);
 		}
 	}
-	return singlesorted.concat(arrB, arrA);
+
+	if (leftarr.length > 0 && rightarr > 0){
+		return[...quicksort(leftarr), pivot, ...quicksort(rightarr)];
+	} else if (leftarr.length > 0) {
+		return[ ...quicksort(leftarr), pivot];
+	} else{
+		return[...quicksort(leftarr), pivot, ...quicksort(rightarr)];
+	}
+
 }
-
-let arrA = [0, 1, 45, 56, 3, 67, 7, 10, 22];
-let arrB = [4, 5, 6, 8, 9, 56, 45, 33, 23];
-
-console.log(mergesort(arrA,arrB));
+const arr = [2, 4, 6, 89, 76, 90, 23, 44, 56, 78, 89, 92, 12];
+console.log(quicksort(arr));
