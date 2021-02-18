@@ -1,44 +1,29 @@
- /*
 
- Write a JavaScript program which compute, the average marks of the following students Then, this average is used to determine the corresponding grade. Go to the editor
-
-Student Name	Marks
-David	80
-Vinoth	77
-Divya	88
-Ishitha	95
-Thomas	68
-The grades are computed as follows :
-
-Range	Grade
-<60	F
-<70	D
-<80	C
-<90	B
-<100	A
+/*
+Write a JavaScript conditional statement to find the largest of five numbers. Display an alert box to show the result. Go to the editor
+Sample numbers : -5, -2, -6, 0, -1
 */
-var students = [['David' ,80] , ['vinoh' ,77] ,['Divya', 88], ['ishitha',95] ,['thomas' ,68]];
+var a = -5;
+var b = -2;
+var c = -6;
+var d = 0;
+var e = -1;
 
-var avgmarks = 0;
-
-for (var i = 0; i < students.length; i++) {
-	avg +=students[i][1];
-	var avg = (avgmarks/students.length);
+if ( a > b && a >c && a >d && a>e ) {
+	alert( '-5 is the largest number')
 }
 
-console.log(avg);
+else if (b >a && b >c && b >d && b>e) {
+	alert ('-2 is the greatest number in the list')
+}
 
-if (avg < 60){
-          console.log("Grade : F");      
-          } 
-        else if (avg < 70) {
-                console.log("Grade : D"); 
-                  } 
-        else if (avg < 80) 
-             {
-                console.log("Grade : C"); 
-        } else if (avg < 90) {
-                console.log("Grade : B"); 
-        } else if (avg < 100) {
-                console.log("Grade : A"); 
+else if (c >a && c > b && c > d && c> e) {
+	alert('-6 is the largest number');
+}
+
+else if (d >a && d >b && d>c && d>e) {
+	alert('0 is the greatest number');
+}
+else{
+	alert('-1 is the greatest number');
 }
