@@ -1,13 +1,8 @@
-//a recursive function vs a while loop
 
-function countdown(num){
-	if (num <= 0) {
-		console.log('all done!');
-		return;
-	}
-	console.log(num);
-	num --;
-	countdown(num);
-}
+// the second recursive function
+ function sumrange(num){
+ 	if(num === 1) return 1;
+ 	return num + sumrange (num - 1);
+} 
 
-console.log(countdown(10));
+sumrange(5)
