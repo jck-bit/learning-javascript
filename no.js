@@ -1,27 +1,13 @@
 
+//. Write a JavaScript function that returns a passed string with letters in alphabetical order. Go to the editor
+//Example string : 'webmaster'
+//Expected Output : 'abeemrstw
 
-// Write a JavaScript function that checks whether a passed string is palindrome or not?
+function alphabetical_order(str){
 
-var letters = [];
-
-var word  = "come"
-
-var rword = " ";
-
-//put the letters of the word in the stack
-
-for (var i = 0; i < word.length; i++){
-  letters.push(word[i]);
+  return str.split('').sort().join('');
 }
+console.log(alphabetical_order("palendrome"));
 
-//pop off the list in a reversed order
-for (var i = 0; i <word.length; i++){
-  rword +=letters.pop();
-}
 
-if (rword === word){
-  console.log( word + "is a palendrome " );
-}
-else{
-  console.log( word +"is not a palendrome" );
-}
+
