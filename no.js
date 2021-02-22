@@ -1,32 +1,27 @@
 
 
-//another example of quicksort in javascript
+// Write a JavaScript function that checks whether a passed string is palindrome or not?
 
+var letters = [];
 
-function quicksort(arr){
-	if (arr.length <= 1){
-		return arr;
-	}
-var arrlength = arr.length;
-var pivotposition = math.floor(arrlength /2);
-var pivotvalue = arr[pivotposition];
-var less = [];
-    more = [];
-    same = [];
+var word  = "come"
 
+var rword = " ";
 
-for(var i = 0; i <arrlength; i++){
-	if (arr[i] === pivotvalue){
-		same.push(arr[i]);
-	}
-	else if (arr[i] < pivotvalue) {
-		less.push(arr[i]);
+//put the letters of the word in the stack
 
-	}
-	else{
-                more.push(arr[i]);
-        }
-	}
-        return quicksort(less).concat(same, quicksort(more));
-  }
+for (var i = 0; i < word.length; i++){
+  letters.push(word[i]);
+}
 
+//pop off the list in a reversed order
+for (var i = 0; i <word.length; i++){
+  rword +=letters.pop();
+}
+
+if (rword === word){
+  console.log( word + "is a palendrome " );
+}
+else{
+  console.log( word +"is not a palendrome" );
+}
