@@ -1,31 +1,23 @@
+// this outlines items in a string
+var str = "give him 100";
+var patt1 = /\w/g;
+var result = str.match(patt1);
+console.log(result);
 
-//quick sort method
+//Write a JavaScript function that accepts a string as a parameter and find the longest word within the string
 
-function quicksort (array){
-	if (array.length == 1){
-		return array;
-	}
+function the_largest_number(str){
+  var array = str.match(/\w[a-z]{0,}/g);
+  var result = array[0];
 
-	const pivot = array[array.length - 1];
-	const leftarr = [];
-	const rightarr = [];
-	for (let i = 0; 1 < array.length - 1; i++){
-		if (array[i] < pivot){
-			leftarr.push(array[i]);
-			
-		} else{
-			rightarr.push(array[i]);
-		}
-	}
+  for(var x = 1; x <array.length; x++){
 
-	if (leftarr.length > 0 && rightarr > 0){
-		return[...quicksort(leftarr), pivot, ...quicksort(rightarr)];
-	} else if (leftarr.length > 0) {
-		return[ ...quicksort(leftarr), pivot];
-	} else{
-		return[...quicksort(leftarr), pivot, ...quicksort(rightarr)];
-	}
+    if(result.length < array[x].length){
 
+      result = array[x];
+
+    }
+  }
+  return result;
 }
-const arr = [2, 4, 6, 89, 76, 90, 23, 44, 56, 78, 89, 92, 12];
-console.log(quicksort(arr));
+console.log(the_largest_number('wed development is essential'));
