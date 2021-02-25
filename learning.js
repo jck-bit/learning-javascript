@@ -1,36 +1,23 @@
+// A javascript programme to find the greatest common divisor(GCD)
 
-//Write a JavaScript function that accepts a number as a parameter and check the number is prime or not.
+ var gcd = function(a ,b){
+	if(! b){
+		return a;
+	}
+	return gcd(b, a % b);
+};
+console.log(gcd(390, 640));
 
-function test_number(n){
+//finding a fibonacci sequence... Each subsequent number is the sum of the previous two
+var fibonacci = function(n) {
 	if (n ===1){
-		return false;
+		return[0, 1];
 	}
-	else if ( n===2 ){
-		return true;
+	else{
+		var s = fibonacci( n-1);
+		s.push(s[s.length -1] + s[s.length -2]);
+		return s;
 	}
-	else {
-		for(var x = 2; x < n; x++) {
-			if(n % x === 0){
-				return false;
-             
-			}
-		}
-		return true;
-	}
-}
-	console.log(test_number(78));
+};
 
-
-
-
-//JavaScript function to get the function name
-function jack(){
-	console.log(arguments.callee.name);
-}
-jack();
-
-//reverse number
- var reverse = [9, 97, 56, 68, 34, 56, 68,90];
- var r = reverse.reverse();
- console.log(r);
-
+console.log (fibonacci(8));
