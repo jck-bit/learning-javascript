@@ -19,15 +19,17 @@ body{
 	left: 50%;
 	transform: translate(-50%, -50%);
 	max-width: 350px;
-	background: #fff
+	width: 1000px;
+    background: #fff;
 	padding:25px;
 	border-radius: 5px; 
-	box-shadow: 4px 4px 2px rgba(254,236,164,1);
+	box-shadow: 1px 1px 1px rgba(250,230,164 ,1);
 }
+	}
 
 .wrapper h2{
 	text-align: center;
-	margin-bottom: 20px;
+	margin-bottom: 50px;
 	text-transform: uppercase;
 	letter-spacing: 3px;
 	color: #332902; 
@@ -41,4 +43,14 @@ body{
 .wrapper textarea{
 	width: 100%;
 	border: 1px solid #e0e0e0; 
+	padding: 10px;
+}
+
+.wrapper textarea{
+	height: 80px;
+	resize: none;
+}
+
+.wraper.btn input[type ="submit"]{
+	border: 0px;
 }
